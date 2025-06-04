@@ -7,12 +7,15 @@
         echo "nao posso continuar";
         exit;
     } 
-    $varSQL = "insert into alunos (nome,email,celular) values (:nome,:email,:celular)";    
+    $varSQL = "insert into alunos (nome,email,celular,turma) values (:nome,:email,:celular,:turma)";    
 
+    /*usar o prepare é mais eficiente pois isere de uma vez no banco de dados*/
     $select = $conn->prepare($varSQL);
     $select->bindParam(':nome', $_POST['nome']);
     $select->bindParam(':email', $_POST['email']);
     $select->bindParam(':celular', $_POST['celular']);
+    $select->bindParam(':turma', $_POST['turma']);
+    
 
     $select->execute();
 

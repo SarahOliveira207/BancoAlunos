@@ -1,6 +1,17 @@
+<?php
+
+    $turma = "2INIA";
+
+    $opcao1 = ($turma=="2INIA" ? "selected" : "");
+    $opcao2 = ($turma=="2INIA" ? "selected" : "");
+    $opcao3 = ($turma=="2INIA" ? "selected" : "");
+
+?>
+
+
 <html>
     <body>
-        <form action='insertAluno.php' method='post'>
+        <form action='insertAluno.php' method='POST'>
 
         Nome<br>
         <input type='text' name='nome' value=''><br>
@@ -20,13 +31,15 @@
 
         Turma <br>
         <select name="turma" id="turma">
-            <option value="2inia">2INIA</option>
-            <option value="2inib">2INIB</option>
-            <option value="2INF">2INF</option>
+            <option <?php echo $opcao1; ?> value="2INIA"> 2INIA </option>
+            <option <?php echo $opcao2; ?> value="2INIB"> 2INIB </option>
+            <option <?php echo $opcao3; ?> value="2INF"> 2INF </option>
         </select> <br>
 
-        </form>
         <button type="submit">Adicionar</button>
+
+        </form>
+        
         
     </body>
 </html>

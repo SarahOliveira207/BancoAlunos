@@ -17,7 +17,8 @@
         <td>Nome</td>
         <td>Celular</td>
         <td>E-mail</td>
-        <td>Alterar</td>
+        <td>Turma</td>
+        <td a>Alterar</td>
         <td>Excluir</td>
     </tr>
     <?php
@@ -26,21 +27,23 @@
             $nome =  $linha['nome'];
             $celular = $linha['celular'];
             $email = $linha['email'];
+            $turma = $linha['turma'];
 
         echo "<tr>
                 <td>$id</td>
                 <td>$nome</td>
                 <td>$celular</td>
                 <td>$email</td>
+                <td>$turma</td>
                 <td>
-                    <a href='alterarCurso.php?id=".$linha['id']."'>Alterar</a>
+                    <a href='alterarAluno.php?id=".$linha['id']."'>Alterar</a>
                 </td>
                 <td>
-                    <a href='excluirCurso.php?id=".$linha['id']."'>Excluir</a>
+                    <a href='excluirAluno.php?id=".$linha['id']."'>Excluir</a>
                 </td>
             </tr>";
         }
     ?>
-    <a href="formAdicionarAluno.php">Adicionar</a>
+    <a href="adicionarAluno.php">Adicionar</a>
 </table>
 
