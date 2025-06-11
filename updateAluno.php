@@ -9,7 +9,7 @@
         exit;
     }
     
-    $varSQL = "update alunos set nome = :nome, celular = :celular, email = :email, turma = :turma WHERE id = :id";
+    $varSQL = "update alunos set nome = :nome, celular = :celular, email = :email WHERE id = :id";
     $update = $conn -> prepare($varSQL);
     $update -> bindParam(':nome', $_POST['nome']);
     $update -> bindParam(':celular', $_POST['celular']);
@@ -18,5 +18,7 @@
     $update -> bindParam(':id', $_POST['id']);
     $update->execute();
 
-    //header("Location: alunos.php");
+    header("Location: alunos.php"); 
+    //, turma = :turma
 ?>
+

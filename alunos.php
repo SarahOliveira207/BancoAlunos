@@ -7,7 +7,7 @@
         echo "nao posso continuar";
         exit;
     }
-    $varSQL = "select *from alunos"; //variável 
+    $varSQL = "select *from alunos order by id"; //variável 
     $select = $conn->query($varSQL);
 ?>
 
@@ -44,6 +44,14 @@
             </tr>";
         }
     ?>
-    <a href="adicionarAluno.php">Adicionar</a>
 </table>
+
+<a href="adicionarAluno.php">Adicionar</a>
+
+<!--<script>
+    functio abrirLink(url){
+        const resposta = confirm("Sejesa excluir?");
+        if(resposta)window.location.href = url;
+    }
+</script>--->
 
